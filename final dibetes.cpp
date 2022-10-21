@@ -847,6 +847,62 @@ void diabetes::twist()
 			exit(0);	
 	}
 }
+void diabetes::enterdata()
+{
+	int i,num=0;
+	fout.open("DIABETESDATA.txt",ios::app);
+	system("cls");
+	cout<<"\t\t\t\t\tWelcome!\n";
+	cout<<"\n\t\t\tPLEASE FILL ALL THE REQUIRED DATA\n";
+	cout<<"\n\n ";
+	cout<<" Enter The no. of paitents : ";
+	cin>>num;
+	cout<<"\n\n ";
+	for(i=0;i<num;i++)
+	{
+	system("cls");
+ 	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"_________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n ";
+    cout<<" PLEASE ASK THE IDno. AND ENTER IT : ";
+    cin>>id;
+    cout<<"\n\n";
+	cout<<" 1 : ENTER NAME : ";
+	scanf("%s",name);
+	fflush(stdin);
+	cout<<"\n\n 2 : AGE : ";
+	cin>>age;
+	cout<<"\n\n 3 : SEX(M/F) : ";
+	cin>>sex;
+	cout<<"\n\n 4 : Height : ";
+	cin>>height;
+	cout<<"\n\n 5 : Weight : ";
+	cin>>weight;
+	cout<<"\n\n 6 : Phone number : ";
+	cin>>phn;
+	fout.write((char*)&mainobj,sizeof(mainobj));
+    }
+	fout.close();
+}
+int diabetes::display(int a,int b)
+{
+	fin.open("DIABETESDATA.txt",ios::in);
+	system("cls");
+	cout<<"\t\t\t\tHere's the Data of all paitents\n\n\n";
+	
+	
+	cout<<"|\t ID\t   |             NAME                 |  AGE    |   SEX   |   HEIGHT    |   WEIGHT      |\n";
+	while(fin.read((char*)&mainobj,sizeof(mainobj)))
+	{
+	cout<<"|"<<setw(9)<<id<<setw(10)<<"|"<<setw(15)<<name<<setw(20)<<"|"<<setw(5)<<age<<setw(5)<<"|"<<setw(5)<<sex<<setw(5)<<"|"<<setw(7)<<height<<setw(7)<<"|"<<setw(7)<<weight<<setw(7)<<"\t|\n\n";
+    }
+	fin.close();
+}
+	
+	
+	
 main()
 {
 	int i=3;
