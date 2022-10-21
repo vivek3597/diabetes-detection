@@ -683,5 +683,228 @@ void diabetes::twist()
 		cout<<" You have entered wrong key \n\n";	
 		break;	
 	}
+	void diabetes:: welcome()
+{
+	system("cls");
+	
+	cout<<"\n";
+	int ch;
+	char check;
+	A:	
+		char chwer[]={"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n"};
+ 	int l=strlen(chwer);
+ 	int kk;
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer[kk];
+	}
+	char chwer1[]={"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n"};	
+     l=strlen(chwer1);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer1[kk];
+	}
+	
+	char chwer2[]={"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n"};
+ l=strlen(chwer2);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer2[kk];
+	}
+	cout<<"\t\t\t\t\t\t\t\t   CHOOSE THE OPTIONS FROM MENU\n\n 1: ENTER DATA\n\n 2: GET\\TAKE APPOINTMENT\n\n 3: LIST OF PAITENTS\n\n 4: TEST\n\n 5: Pre-Report\n\n 6: FINAL REPORT\n\n 7: PATIENT-LOGIN\n\n 8: ABOUT DEVELOPER OF THIS CODE\n\n 9: EXIT\n\n";
+    cout<<"\n YOUR CHOICE : ";
+	cin>>ch;
+    switch(ch)
+    {
+    	    case 1:
+    		enterdata();
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 2:
+    		doctorlist();
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }	
+		    case 3:
+    		display(10,20);
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 4:
+    		test();
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{   
+			system("cls"); 
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;	
+		    }
+		    case 5:
+		    prereport();
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 6:
+		    report(); 
+			cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+			case 7:
+			patientlogin();
+			cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+				
+		    case 8:
+		    aboutme();
+		    cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto A;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 9:
+		    cout<<" Exiting.... \n\n ";
+			sleep(2);
+			twist();
+			exit(0);	
+	}
+}
+main()
+{
+	int i=3;
+	diabetes o;
+	d:
+	system("cls");
+	passo.password();
+		if(wholecheck==1)
+	    {
+	    mainobj.twist();	
+        }
+        else if(wholecheck==2)
+        {
+        cout<<"\n\n Server Crashed due to heavy traffic or You Entered Incorrect Password\n";	
+        cout<<"\n\n Try Again in few seconds\n\n";
+        char ch12[]={"\n\n Reloading in 5 seconds\n\n"};
+        int kk,l;
+		for(kk=0;kk<l;kk++)
+        {
+        	Sleep(15);
+        	cout<<ch12[kk];
+		}
+        char ch13[]={"\n\n Reloading in 4 seconds\n\n"};
+        l=strlen(ch13);
+        for(kk=0;kk<l;kk++)
+        {
+        	Sleep(15);
+        	cout<<ch13[kk];
+		}
+        char ch14[]={"\n\n Reloading in 3 seconds\n\n"};
+        l=strlen(ch14);
+        for(kk=0;kk<l;kk++)
+        {
+        	Sleep(15);
+        	cout<<ch14[kk];
+		}
+        char ch15[]={"\n\n Reloading in 2 seconds\n\n"};
+        l=strlen(ch15);
+        for(kk=0;kk<l;kk++)
+        {
+        	Sleep(15);
+        	cout<<ch15[kk];
+		}
+        char ch16[]={"\n\n Reloading in 1 seconds\n\n"};
+        l=strlen(ch16);
+        for(kk=0;kk<l;kk++)
+        {
+        	Sleep(15);
+        	cout<<ch16[kk];
+		}
+        if(i>=1)
+        {
+        goto d;
+        i--;
+        }
+        else
+        cout<<"\n\n Interface Locked due to many invalid tries\n\n";
+        }
+}
 }
 
