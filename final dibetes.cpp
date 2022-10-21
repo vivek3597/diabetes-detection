@@ -950,6 +950,97 @@ if(tempid==mainobj.id)
 	break;
 }
 }	
+if(mainobj.id==tempid)
+{
+	cout<<"\n\n Enter today's date(dd/mm/yyyy) : ";
+	cin>>dd>>mm>>yyyy;
+	while(fturndoc.read((char*)&docp,sizeof(docp)))
+	{
+		if(dd==docp.st.d && docp.st.m==mm && docp.st.y==yyyy && tempid==docp.id)
+		 {
+		 	count=1;
+		 	break;
+		 }
+		 else
+		 count=0;
+    }
+	if(dd==docp.st.d && docp.st.m==mm && docp.st.y==yyyy && tempid==docp.id)
+	{
+	objp.id=tempid;
+	cout<<"\n\n Please Answer The following Questions\n\n\n";
+	cout<<" Patient name: ";
+	cout<<mainobj.name;
+	cout<<"\n\n\n";
+	cout<<" 1:Are you getting thirsty frequently.Enter the data accordingly(3-highly yes||2-medium yes||1-low yes||0-no)? -> ";
+	cin>>objp.thirst;
+	cout<<"\n\n\n";
+	cout<<" 2:Are you getting hungry fast.Enter the data accordingly(3-highly yes||2-medium yes||1-low yes||0-no)? -> ";
+	cin>>objp.hunger;
+    cout<<"\n\n\n";
+	cout<<" 3:Are you getting urine frequently.Enter the data accordingly(3-highly yes||2-medium yes||1-low yes||0-no)? -> ";
+	cin>>objp.furine;
+	cout<<"\n\n\n";
+	cout<<" 4:Do you get headches?Enter the level(3-high||2-medium||1-low||0-no)? -> ";
+	cin>>objp.headche;
+	cout<<"\n\n\n";
+	cout<<" 5:Do you feel fatiguness?Enter the level(3-high||2-medium||1-low||0-no)? -> ";
+	cin>>objp.fatigue;
+	cout<<"\n\n\n";
+	cout<<" 6:How is your vision?Enter the level(3-highly Blurred||2-Partially Blurred||1-Sometimes Blurred||0-no)? -> ";
+	cin>>objp.vision;
+	cout<<"\n\n 7.Was there anyy weight loss in your body in few days(y/n)?->";
+	cin>>objp.weight;
+	cout<<"\n\n\n";
+	cout<<" 8.Has any body in your family had diabetes before?(y/n)?->";
+	cin>>objp.fam;
+	cout<<"\n\n";
+	sleep(2);
+	system("cls");
+	cout<<"\n\n\n\t\t\t Thanks! Please Take the Test from doctor ";
+	cout<<"\n\n Taking Blood Sample : ";
+	cout<<"\n ";
+	sleep(2);
+	cout<<"\n\n Wait for some time \n ";
+	sleep(2);
+	cout<<"\n\n TESTING BLOOD \n ";
+	sleep(2);
+	cout<<"\n\n Please be patient and steady!! \n ";
+	sleep(2);
+	cout<<"\n\n Blood Test Complete\n ";
+	sleep(2);
+	cout<<"\n\n";
+	cout<<" Had a Meal or not(y/n) for past three hours? : ";
+	cin>>objp.food;
+	cout<<"\n\n Enter Readings of Glucometer : ";
+	cin>>objp.sugarlevel;
+	cout<<"\n\n\n";
+	cout<<" Enter the blood pressure(num) : ";
+	cin>>objp.blpressurenum;
+	cout<<" Enter the blood pressure(den) : ";
+	cin>>objp.blpressuredem;
+	cout<<"\n\n\n";
+	cout<<"\n\n Enter the glucoselevel(sugar)(mg/dl)[This is Fasting Plasma Test(FPG)] -> : ";
+	cin>>objp.glucoselevel;
+	cout<<"\n\n Enter the glucoselevel(sugar1)(mg/dl)[This is Oral Glucose Tolerance Test(OGTT)] -> : ";
+	cin>>objp.glucose1;
+	sleep(2);
+	cout<<"\n\n Test complete you may take the report at evening from reception.";
+	cout<<"\n\n\n";
+    fout.write((char*)&objp,sizeof(objp));
+    }
+    else
+    {
+    	cout<<"\n\n There's no appointment Booked for such person";
+	}
+}
+else
+{
+	cout<<"\n\n Invalid id Please Check and try again ";
+}
+fout.close();
+fin.close();
+fturndoc.close();
+}
 	
 	
 	
