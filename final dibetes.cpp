@@ -900,6 +900,56 @@ int diabetes::display(int a,int b)
     }
 	fin.close();
 }
+void diabetes::search()
+{
+	system("cls");
+	fin.open("DIABETESDATA.txt",ios::in|ios::out);
+	int tempid,k=0;
+	char check;
+	cout<<"\t\t\t\tDiabetes Health Care\t\n";
+	cout<<"\n Enter the id no. of patient : ";
+	cin>>tempid;
+while(fin.read((char*)&mainobj,sizeof(mainobj)))
+{
+if(tempid==mainobj.id)
+{
+	k++;
+	break;
+}
+}	
+if(mainobj.id==tempid)
+{
+			cout<<"|\t ID\t   |             NAME                 |  AGE    |   SEX   |   HEIGHT    |   WEIGHT      |\n";
+	cout<<"|"<<setw(9)<<id<<setw(10)<<"|"<<setw(15)<<name<<setw(20)<<"|"<<setw(5)<<age<<setw(5)<<"|"<<setw(5)<<sex<<setw(5)<<"|"<<setw(7)<<height<<setw(7)<<"|"<<setw(7)<<weight<<setw(7)<<"\t|\n\n";
+cout<<"\n ";
+}
+else
+{
+	cout<<" YOU HAVE ENTERED THE INVALID ID PLEASE TRY AGAIN \n";
+}
+fin.close();
+}
+void diabetes::test()
+{
+	system("cls");
+	int dd,mm,yyyy;
+	cout<<"\t\t\t\tDIABETES HEALTH CARE!\n\n\n";
+	fin.open("DIABETESDATA.txt",ios::in|ios::out);
+	fout.open("problems.txt",ios::app);
+	fturndoc.open("Doctors1.txt",ios::in);
+	int tempid,k=0,count=0;
+	char check;
+	cout<<"\t\t\t\tDiabetes Health Care\t\n";
+	cout<<"\n\n Enter the id no. of patient : ";
+	cin>>tempid;
+while(fin.read((char*)&mainobj,sizeof(mainobj)))
+{
+if(tempid==mainobj.id)
+{
+	k++;
+	break;
+}
+}	
 	
 	
 	
