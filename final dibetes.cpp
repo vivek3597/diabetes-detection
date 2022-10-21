@@ -517,3 +517,99 @@ class diet
 	 mainobj.twist();
 	}	
 };
+void Login::password()
+{
+	system("cls");
+	int i;
+	char alogin[8],apassword[13];
+	char login[]="tushar06";
+	char pass[]="tusharamit06";
+	char iot;
+	iot=getch();
+system("cls");
+ 	char chwer[]={"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n"};
+ 	int l=strlen(chwer);
+ 	int kk;
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer[kk];
+	}
+	char chwer1[]={"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n"};	
+     l=strlen(chwer1);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer1[kk];
+	}
+	
+	char chwer2[]={"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n"};
+ l=strlen(chwer2);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer2[kk];
+	}
+	char take[]={"\n\n Enter Login_id: "};
+	int d1=strlen(take);
+	for(kk=0;kk<d1;kk++)
+	{
+	Sleep(15);	
+	cout<<take[kk];
+    }
+	char a;
+		cin>>alogin;
+	if(strcmp(alogin,login)==0)
+	{
+	
+		char take1[]={"\n\n Enter Password: "};
+	    d1=strlen(take1);
+		for(kk=0;kk<=d1;kk++)
+		{
+			Sleep(15);
+			cout<<take1[kk];
+		}
+		for(i=0;i<13;i++)
+		{
+			a=getch();
+			if(a==13)
+			break;
+			else if(a==8)
+		    {
+			if(i>0)	
+			cout<<"\b \b";
+			i=i-2;
+		    continue;
+		    }
+		    if(i<0)
+		    i=0;
+			else
+			putchar('*');
+			apassword[i]=a;
+		}
+		apassword[i]='\0';
+    if(strcmp(apassword,pass)==0)
+		{
+			char re[]={"\n\n\n Login Successfull\n\n "};
+			int rp=strlen(re);
+			int u;
+			for(u=0;u<rp;u++)
+			{
+				Sleep(14);
+				cout<<re[u];
+			}
+			sleep(2);
+			wholecheck=1;
+		}
+		else
+		{
+			wholecheck=2;
+		 cout<<"\n\n Incorrect password";
+		}
+	}
+	else
+	{
+		cout<<"\n\n Invalid Login_id\\Username\n\n";
+	}
+}
+
