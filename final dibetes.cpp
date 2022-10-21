@@ -612,4 +612,76 @@ system("cls");
 		cout<<"\n\n Invalid Login_id\\Username\n\n";
 	}
 }
+void diabetes::twist()
+{
+	system("cls");
+	int ch;
+		char chwer[]={"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n"};
+ 	int l=strlen(chwer);
+ 	int kk;
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer[kk];
+	}
+	char chwer1[]={"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n"};	
+     l=strlen(chwer1);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer1[kk];
+	}
+	
+	char chwer2[]={"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n"};
+ l=strlen(chwer2);
+ 	for(kk=0;kk<l;kk++)
+ 	{
+ 		Sleep(10);
+ 		cout<<chwer2[kk];
+	}
+    cout<<"\t\t\t\t\t\t\t\t\tChoose the operation \n\n\n 1-> PATIENT \n\n 2-> ADMIN \n\n 3-> QUERIES \n\n 4-> QUERIES REPLY \n\n 5-> Quick Checkup\n\n 6-> Diet Planner \n\n 7-> Log Out\n\n 8-> Exit";
+    cout<<"\n\n Your Choice-> ";
+    cin>>ch;
+    switch(ch)
+    {
+    	case 1:
+    	welcome();
+    	break;
+    	
+    	case 2:
+    	setlock();	
+     	if(counter1!=0)
+    	admin();
+    	else
+    	cout<<"\n\n\n Access Denied!! Terminating ";
+    	sleep(3);
+    	twist();
+    	break;
+    	case 3:
+    	queries();
+		break;
+		case 4:
+		showqu();
+		break;
+		case 5:
+		quick();
+		break;	
+		case 6:
+		diet();
+		break;	
+		case 7:
+		cout<<"\n Logging Out.....\n\n";
+		sleep(2);
+		passo.password();
+		break;
+		case 8:
+		cout<<"\n\n Exiting...\n\n";
+		sleep(2);
+		exit(0);
+		break;	
+		default:
+		cout<<" You have entered wrong key \n\n";	
+		break;	
+	}
+}
 
