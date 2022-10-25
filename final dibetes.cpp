@@ -1385,7 +1385,97 @@ else
 fout.close();
 fin.close();
 }
-	
+void diabetes::doctorlist()
+{
+	system("cls");
+	int date,month,year;
+	cout<<"\t\t\tDiabetes Health Care!\n\n\n";
+	fin.open("DIABETESDATA.txt",ios::in);
+	fout.open("Temp.txt",ios::in);
+	fturndoc.open("Doctors1.txt",ios::app|ios::in);
+	while(fturndoc.read((char*)&docp,sizeof(docp)))
+	{
+		fout.write((char*)&docp,sizeof(docp));
+	}
+	fout.close();
+	fturndoc.close();
+	fout.open("Temp.txt",ios::in);
+	fturndoc.open("Doctors1.txt",ios::app|ios::in);
+	int choice;
+	int tempid;
+	cout<<"\n\n Enter the paitent id : ";
+	cin>>tempid;
+	while(fin.read((char*)&mainobj,sizeof(mainobj)))
+    {	
+    if(tempid==mainobj.id)
+    {
+    break;	
+	}
+    }
+    if(tempid==mainobj.id)
+    {
+    	cout<<"\n\n Paitent Name : "<<mainobj.name;
+    	cout<<"\n\n";
+    	B:
+    		int tt=0;
+    		if(tt=1)
+    		{
+    	     system("cls");
+    	    }
+    	cout<<"\n\n\t\t\t\t\t\t\t\tDoctor's List\n\n";
+    	cout<<"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n";
+	cout<<"\tId\t|\t\tDoctor Name\t\t|   \t\tTimings\t\t\t |\tDays\t|\t\tFees\t\t|\n\n";
+	cout<<"\t1\t|\t\tDr.D.K.Thakur\t\t|\t\t10:00am-12:00pm\t\t|\t Mon \t|\t\tRs 1000\t\t|\n\n";
+	cout<<"\t2\t|\t\tDr.N.S.Grover\t\t|\t\t05:00pm-07:00pm\t\t|\t Tue \t|\t\tRs 1500\t\t|\n\n";
+	cout<<"\t3\t|\t\tDr.D.S.Chawla\t\t|\t\t11:00am-01:00pm\t\t|\t Wed \t|\t\tRs 1500\t\t|\n\n";
+	cout<<"\t4\t|\t\tDr.Jordan    \t\t|\t\t11:00am-02:00pm\t\t|\t Thurs\t|\t\tRs 2000\t\t|\n\n";
+	cout<<"\t5\t|\t\tDr.JazzyB    \t\t|\t\t05:00pm-08:00pm\t\t|\t Fri \t|\t\tRs 3000\t\t|\n\n";
+	cout<<" Enter your Choice of Doctor to Book your Appointment\n\n";
+	cout<<"\n Your Choice : ";
+	cin>>choice;
+	docp.id=tempid;
+	docp.idofdoc=choice;
+	cout<<"\n\n Enter Date to Fix appointment(dd/mm/yyyy)\n\n";
+	cout<<" Your input : ";
+	cin>>date;
+	cin>>month;
+	cin>>year;
+	cout<<"\n\n Wait! Checking For Appointments ";
+	cout<<"\n\n ";
+	fout.read((char*)&docp,sizeof(docp));
+	{
+	if(docp.st.d==date && docp.st.m==month &&  docp.st.y==year)
+	{
+		char check;
+		cout<<"\n\n Sorry for inconvenience The date you selected is not available for appointment ";
+		cout<<"\n\n Press Y to try again \n ";
+		cout<<"Your Choice: ";cin>>check;
+		if(check=='y'||check=='Y')
+		{
+			tt=1;
+			goto B;
+		}
+	}
+	else
+	{
+	    docp.st.d=date;
+		docp.st.m=month;
+		docp.st.y=year;
+		cout<<"\n ";
+		sleep(3);
+		cout<<"\n\n Thanks! Appointment Fixed on "<<date<<"/"<<month<<"/"<<year;
+		fturndoc.write((char*)&docp,sizeof(docp));	
+	}
+    }
+    }
+    else
+    cout<<"\n\n Appointment Not Fixed";    
+    cout<<"\n\n";
+    fout.close();
+    fturndoc.close();
+    fin.close();
+    remove("Temp.txt");
+}	
 	
 	
 	
