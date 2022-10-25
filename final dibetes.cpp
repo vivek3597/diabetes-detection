@@ -1041,6 +1041,351 @@ fout.close();
 fin.close();
 fturndoc.close();
 }
+int diabetes::report()
+{
+	float checkdb1=0,checkdb2=0,checkdb3=0;
+	system("cls");
+	cout<<"\t\t\t\tDIABETES HEALTH CARE!\n\n\n";
+	fin.open("DIABETESDATA.txt",ios::in);
+	fout.open("problems.txt",ios::in);
+	int tempid,k=0;
+	char check;
+	cout<<"\t\t\t\tDiabetes Health Care\t\n";
+	cout<<"\n Enter the id no. of patient : ";
+	cin>>tempid;
+    while(fin.read((char*)&mainobj,sizeof(mainobj)))
+    {
+	if(tempid==mainobj.id)
+	{
+	while(fout.read((char*)&objp,sizeof(objp)))
+	{
+    if(objp.id==tempid)
+    {
+	k++;
+	break;
+    }
+    }
+    break;
+    }
+}
+if(mainobj.id==tempid )
+{
+		cout<<"|\t ID\t   |             NAME                 |  AGE    |   SEX   |   HEIGHT    |   WEIGHT      |\n";
+	cout<<"|"<<setw(9)<<id<<setw(10)<<"|"<<setw(15)<<name<<setw(20)<<"|"<<setw(5)<<age<<setw(5)<<"|"<<setw(5)<<sex<<setw(5)<<"|"<<setw(7)<<height<<setw(7)<<"|"<<setw(7)<<weight<<setw(7)<<"\t|\n\n";
+cout<<"\n\n";
+cout<<" 1.Thirst Level : ";
+if(objp.thirst==0)
+cout<<" NO PROBLEM";
+else if(objp.thirst==1)
+cout<<" LOW";
+else if(objp.thirst==2)
+cout<<" MEDIUM";
+else if(objp.thirst==3)
+cout<<" HIGH";
+cout<<"\n\n";
+
+
+
+cout<<" 2.Hunger Level: ";
+if(objp.hunger==0)
+cout<<" NO PROBLEM";
+else if(objp.hunger==1)
+cout<<" LOW";
+else if(objp.hunger==2)
+cout<<" MEDIUM";
+else if(objp.hunger==3)
+cout<<" HIGH";
+cout<<"\n\n";
+
+
+
+cout<<" 3.Headche Level: ";
+if(objp.headche==0)
+cout<<" NO PROBLEM";
+else if(objp.headche==1)
+cout<<" LOW";
+else if(objp.headche==2)
+cout<<" MEDIUM";
+else if(objp.headche==3)
+cout<<" HIGH";
+cout<<"\n\n";
+
+
+
+cout<<" 4.Fatigue Level: ";
+if(objp.fatigue==0)
+cout<<" NO PROBLEM";
+else if(objp.fatigue==1)
+cout<<" LOW";
+else if(objp.fatigue==2)
+cout<<" MEDIUM";
+else if(objp.fatigue==3)
+cout<<" HIGH";
+cout<<"\n\n";
+
+
+
+cout<<" 5.Urine Frequency: ";
+if(objp.furine==0)
+cout<<" NO PROBLEM";
+else if(objp.furine==1)
+cout<<" LOW";
+else if(objp.furine==2)
+cout<<" MEDIUM";
+else if(objp.furine==3)
+cout<<" HIGH";
+cout<<"\n\n";
+
+
+
+cout<<" 6.Vision: ";
+if(objp.furine==0)
+cout<<" NO PROBLEM";
+else if(objp.furine==1)
+cout<<" LOW PROBLEM";
+else if(objp.furine==2)
+cout<<" MEDIUM PROBLEM";
+else if(objp.furine==3)
+cout<<" HIGH PROBLEM";
+cout<<"\n\n";
+
+
+
+cout<<" 7.BloodPressure :";
+if(objp.blpressurenum>140)
+{
+	if(objp.blpressuredem>80)
+    {
+	cout<<"High Blood Pressure\n";
+    }
+	else
+	cout<<"High Blood Pressure(cond(II))\n";
+}
+else if(objp.blpressurenum<=140 && objp.blpressurenum>=120)
+{
+	if(objp.blpressuredem>=80 && objp.blpressuredem<=100)
+	cout<<" Normal Blood Pressure";
+	else
+	cout<<" Normal Blood Pressure(II)";
+}
+else
+{
+	cout<<" Low Blood Pressure ";
+}
+cout<<"\n\n\t\t\t\t\t\t\t\t Blood Report";
+cout<<"\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n";
+int blood;
+srand(time(NULL));
+blood=rand()%1+8;
+if(blood==1)
+{
+	cout<<" Blood Group : "<<" A+ ";
+}
+else if(blood==2)
+{
+	cout<<" Blood Group : "<<" A-"; 
+}
+else if(blood==3)
+{
+	cout<<" Blood Group : "<<" B+"; 
+}
+else if(blood==4)
+{
+	cout<<" Blood Group : "<<" B-"; 
+}
+else if(blood==5)
+{
+	cout<<" Blood Group : "<<" O+"; 
+}
+else if(blood==6)
+{
+	cout<<" Blood Group : "<<" O-"; 
+}
+else if(blood==7)
+{
+	cout<<" Blood Group : "<<" AB+"; 
+}
+else if(blood==8)
+{
+	cout<<" Blood Group : "<<" AB-"; 
+}
+else
+{
+    cout<<" Blood Group : "<<" O+"; 
+}
+float bloodcount;
+srand(time(NULL));
+bloodcount=rand()%4000+10000;
+if(bloodcount<4500)
+{
+	cout<<"\n Blood Count : Low -> "<<bloodcount;
+}
+else if(bloodcount>=4500 && bloodcount<10000)
+{
+	cout<<"\n Blood Count : High -> "<<bloodcount;
+}
+float ha;
+ srand(time(NULL));
+ ha=rand()%10+9;
+ if(ha>=12 && ha<16)
+ cout<<"\n\n Hameogloblin level -> Normal : "<<ha<<" grams per deciliter";
+  if(ha<12)
+ cout<<"\n\n Hameogloblin level -> LOW : "<<ha<<" grams per deciliter";
+  if(ha>16)
+ cout<<"\n\n Hameogloblin level ->  : "<<ha<<" grams per deciliter";
+
+
+float cholestrol;
+srand(time(NULL));
+cholestrol=rand()%90+200;
+if(cholestrol<=100)
+cout<<"\n\n Cholesrtrol -> IDEAL ->  "<<cholestrol<<" mg/dl";
+else if(cholestrol>100 && cholestrol<=129)
+cout<<"\n\n Cholestrol -> Close to Ideal -> "<<cholestrol<<" mg/dl";
+else if(cholestrol>=130 && cholestrol<=159)
+cout<<"\n\n Cholesrtrol -> Borderline ->  "<<cholestrol<<" mg/dl";
+else if(cholestrol>=160 && cholestrol<=189)
+cout<<"\n\n Cholesrtrol ->  High ->  "<<cholestrol<<" mg/dl";
+else if(cholestrol>=190 && cholestrol<=240)
+cout<<"\n\n Cholesrtrol ->  Highly Dangerous ->  "<<cholestrol<<" mg/dl";
+
+cout<<"\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n";
+cout<<"\n\n 8.Fasting Plasma Glucose Test(FPG) : ";
+if(objp.glucoselevel<100.00)
+{
+	cout<<" Glucose Level : Normal -> "<<objp.glucoselevel<<" mg/dl";
+    checkdb1++;
+}
+else if(objp.glucoselevel>=100.00 && objp.glucoselevel<=125.00)
+{
+	cout<<" Glucose Level : Pre-Diabetes-> "<<objp.glucoselevel<<" mg/dl";
+    checkdb2++;
+}
+else if(objp.glucoselevel>=126.00)
+{
+	cout<<" Glucose Level : High -> Diabetes II "<<objp.glucoselevel<<" mg/dl";
+     checkdb2++;
+     checkdb3++;
+}
+cout<<"\n\n 9.Oral Glucose Tolerance Test(OGTT) :- ";
+if(objp.glucose1<140.00)
+{
+	cout<<" Glucose Level : Normal -> "<<objp.glucose1<<" mg/dl";
+	checkdb1++;
+}
+else if(objp.glucose1>=140.00 && objp.glucose1<=199.00)
+{
+	cout<<" Glucose Level : Higher than Normal (PRE-Diabetes)-> "<<objp.glucose1<<" mg/dl";
+    checkdb2++;
+}
+else if(objp.glucose1>=200.00)
+{
+	cout<<" Glucose Level : High -> Diabetes II"<<objp.glucose1<<" mg/dl";
+    checkdb2++;
+    checkdb3++;
+}
+
+
+cout<<"\n\n 10.Sugar Level (Glucometer): ";
+if(objp.food=='y'|| objp.food=='Y')
+{
+if(objp.sugarlevel>=9.0)
+{
+cout<<" High Sugar Level-II\n";
+checkdb2++;
+checkdb3++;
+}
+else if(objp.sugarlevel<9.0 && objp.sugarlevel>7.5)
+{
+cout<<" High Sugar Level\n";
+checkdb2++;
+}
+else if(objp.sugarlevel>4.0 && objp.sugarlevel<7.4)
+{
+cout<<" Normal Sugar Level\n";
+checkdb1++;
+}
+else
+cout<<" Low Sugar Level\n";
+}
+else if( objp.food=='n'|| objp.food=='N')
+{
+if(objp.sugarlevel>7.0)
+{
+cout<<" High Sugar Level\n";
+checkdb2++;
+}
+else if(objp.sugarlevel>4.0 && objp.sugarlevel<5.9 )
+{
+cout<<" Normal Sugar Level\n\n";
+checkdb1++;
+}
+else
+{
+cout<<" Low Sugar Level\n\n";	
+}
+cout<<"\n\n During Taking test we have found that you hadn't ate something from last 2 - 3 hrs so here's a tip \n\n";	
+cout<<" Health Tip 1 :";
+cout<<" You should eat something in every 2 hours it is important for body\n\n";
+sleep(1);	
+}
+cout<<"\n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+if(checkdb1==3 && checkdb2<=1 && checkdb3==0)
+{
+	cout<<"\n\n\t\t\t\t\t\t\t\t Consult Doctor: For further Detailed Explanation!.";
+	cout<<"\n\n\t\t\t\t\t\t\t\t Diabetes Test : Negative \n";
+}
+if(checkdb2==2 && checkdb3<=1)
+{
+	cout<<"\n\n\t\t\t\t\t\t\t\t Consult Doctor: For further Detailed Explanation!.";
+	cout<<"\n\n\t\t\t\t\t\t\t\t Diabetes Test : Positive \n\t\t\t\t\t\t\t\t Diabetes Type : Pre Diabetes(I) \n";
+}
+if(checkdb2<2 && checkdb3>1)
+{
+	cout<<"\n\n\t\t\t\t\t\t\t\t Consult Doctor: For further Detailed Explanation!.";
+	cout<<"\n\n\t\t\t\t\t\t\t\t Diabetes Test : Positive \n\t\t\t\t\t\t\t\t Diabetes Type : Pre Diabetes(II)\n";
+}
+if(checkdb3==2 || checkdb3==3)
+{
+	cout<<"\n\n\t\t\t\t\t\t\t\t Consult Doctor: For further Detailed Explanation!.";
+	cout<<"\n\n\t\t\t\t\t\t\t\t Diabetes Test : Positive \n\t\t\t\t\t\t\t\t Diabetes Type : Level(II)\n";
+}
+if(checkdb3==2 && checkdb2==2)
+{
+    cout<<"\n\n\t\t\t\t\t\t\t\t Consult Doctor: For further Detailed Explanation!.";
+	cout<<"\n\n\t\t\t\t\t\t\t\t Diabetes Test : Positive \n\t\t\t\t\t\t\t\t Diabetes Type : Level(I)\n";
+}
+else if(checkdb2==1 && checkdb1==1 && checkdb2==1)
+{
+	cout<<"\n\n\t\t\t\t\t\t\t Meet Doctor Again due to some complications in test";
+}
+else
+{
+	cout<<"\n\n\t\t\t\t\t\t\t Consult Doctor for More Help";
+}
+cout<<"\n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+cout<<"\n\n\n\t\t\t\t\t\t\t\t Final Result :- ";
+if(objp.glucose1<140.00)
+{
+	cout<<"Normal";
+}
+else if(objp.glucose1>=140.00 && objp.glucose1<=199.00)
+{
+	cout<<"PRE-Diabetes";
+}
+else if(objp.glucose1>=200.00)
+{
+	cout<<"Diabetes II";
+}
+}
+else
+{
+	cout<<"\n\n Test Report has not been made\n\n";
+}
+fout.close();
+fin.close();
+}
+	
 	
 	
 	
