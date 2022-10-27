@@ -1885,6 +1885,51 @@ void adminstration::adminsi()
 	fadmin.close();
 	mainobj.admin();
 }
+
+
+   void adminstration::count()
+    {
+	int c=0;
+	system("cls");
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	cout<<"\n\n\t\t\t\t\t\t\t\t  WE ARE ALWAYS HERE TO HELP YOU \n\n\n";
+	fadmin.open("admin.txt",ios::in);
+	fin.open("DIABETESDATA.txt",ios::in);
+	cout<<" Choose : \n\n 1-> Paitents \n\n 2-> Staff \n\n ";
+	int choice;
+	cout<<"\n Your Choice : ";
+	cin>>choice;
+	switch(choice)
+	{
+	case 1:
+	while(fin.read((char*)&mainobj,sizeof(mainobj)))	
+	{
+	c++;
+	}
+	cout<<"\n\n The Total Count is: ";
+	cout<<c;
+	counter=c;
+	c=0;	
+		cout<<"\n\n\n";	
+	break;
+	case 2:	
+    while(fadmin.read((char*)&admino,sizeof(admino)))	
+	{
+	c++;
+	}
+	cout<<"\n\n The Total Count is: ";
+	cout<<c;
+	counter=c;
+	cout<<"\n\n\n";
+	c=0;
+	break;
+    }
+    }
+    
+    
+    
 	
 	
 	
