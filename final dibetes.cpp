@@ -1558,6 +1558,64 @@ void diabetes::aboutme()
 		exit(1);
 }
 	
+void diabetes::deldata()
+{
+	    int tempid,k=0;
+	    system("cls");
+	      	fin.open("DIABETESDATA.txt",ios::in);
+	   	fout.open("Temp.txt",ios::out);
+	   	fturndoc.open("Doctor1.txt",ios::in);
+	   	ftemp.open("Tempdoc.txt",ios::out);
+	   cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";	
+	   	cout<<"\t\t\t\tHere's the Data of all paitents\n\n\n";
+	
+	
+	cout<<"|\t ID\t   |             NAME                 |  AGE    |   SEX   |   HEIGHT    |   WEIGHT      |\n";
+	while(fin.read((char*)&mainobj,sizeof(mainobj)))
+	{
+	cout<<"|"<<setw(9)<<id<<setw(10)<<"|"<<setw(15)<<name<<setw(20)<<"|"<<setw(5)<<age<<setw(5)<<"|"<<setw(5)<<sex<<setw(5)<<"|"<<setw(7)<<height<<setw(7)<<"|"<<setw(7)<<weight<<setw(7)<<"\t|\n\n";
+    }
+    fin.close();
+    	fin.open("DIABETESDATA.txt",ios::in);
+	   	cout<<"\n Enter the id no. of patient : ";
+	   	cin>>tempid;
+	 
+	   	while(fin.read((char*)&mainobj,sizeof(mainobj)))
+	   	{
+	   	if(tempid==mainobj.id)	
+	   	{
+	   	k++;	
+		}
+		else
+		{
+			fout.write((char*)&mainobj,sizeof(mainobj));
+		}
+		}
+		fin.close();
+		fout.close();
+		fin.open("DIABETESDATA.txt",ios::out);
+	   	fout.open("Temp.txt",ios::in);
+	   	while(fout.read((char*)&mainobj,sizeof(mainobj)))
+	   	{
+		fin.write((char*)&mainobj,sizeof(mainobj));
+		}
+		cout<<"\n\n Deleted Record";
+		cout<<"\n\n";
+		fin.close();
+		fout.close();
+		cout<<"\n\n UPDATED RECORDS";
+		cout<<"\n\n";
+		fin.open("DIABETESDATA.txt",ios::in);
+		cout<<"|\t ID\t   |             NAME                 |  AGE    |   SEX   |   HEIGHT    |   WEIGHT      |\n";
+	    while(fin.read((char*)&mainobj,sizeof(mainobj)))
+     	{
+	     cout<<"|"<<setw(9)<<id<<setw(10)<<"|"<<setw(15)<<name<<setw(20)<<"|"<<setw(5)<<age<<setw(5)<<"|"<<setw(5)<<sex<<setw(5)<<"|"<<setw(7)<<height<<setw(7)<<"|"<<setw(7)<<weight<<setw(7)<<"\t|\n\n";
+        }
+    fin.close();
+}
 	
 	
 	
