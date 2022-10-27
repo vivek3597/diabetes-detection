@@ -1928,6 +1928,85 @@ void adminstration::adminsi()
     }
     }
     
+void diabetes::setlock()
+{
+        int i,c=0;
+        char a[20],p[13];	
+        system("cls");
+	    cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	    cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+        cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	    cout<<"\n\n\t\t\t\t\t\t\t\t  WE ARE ALWAYS HERE TO HELP YOU \n\n\n";
+	    fadmin.open("admin.txt",ios::in);
+	    fout.open("admintmp.txt",ios::out);
+	    fadmin.seekg(0,ios::beg);
+	    fout.seekp(0,ios::beg);
+		while(fadmin.read((char*)&admino,sizeof(admino)))	
+	    {
+	    fout.write((char*)&admino,sizeof(admino));
+	    }
+       fout.close(); 
+	   fadmin.close();
+	   fout.open("admintmp.txt",ios::in);
+	   while( fout.read((char*)&admino,sizeof(admino)))
+	   {
+	   	c++;
+	   }
+	   fout.close();
+	   fadmin.open("admin.txt",ios::in); 
+	    if(c==0)
+	    {
+	   	cout<<"\n\n No id existed So please Signup to do so\n\n";
+	   	sleep(3);
+	    admino.adminsi();
+	    } 
+	    else
+	    {
+	    cout<<"\n\n Enter the userid : ";	
+        cin>>a;
+        cout<<"\n\n Enter The Password : ";
+        for(i=0;i<12;i++)
+	    	{
+			p[i]=getch();
+			if(p[i]==13)
+			break;
+			else if(p[i]==8)
+			{
+			cout<<"\b \b";
+			i=i-2;
+			}
+			else
+			putchar('*');
+		    }
+		p[i]='\0';	 
+        while(fadmin.read((char*)&admino,sizeof(&admino)) && !fadmin.eof())
+       {
+    	if(strcmp(a,admino.userid)==0 && strcmp(p,admino.password)==0)
+	   {
+	    sleep(2);
+    	cout<<"\n\n Wait for sometime\n\n";
+	    break;
+	   }
+       }
+       fadmin.close();	
+       if(strcmp(a,admino.userid)==0 && strcmp(p,admino.password)==0)
+	   {
+	   cout<<"\n\n Login Successfull \n\n";
+	   sleep(1);
+	   cout<<" Redirecting \n\n";	
+	   sleep(2);
+	   mainobj.admin();
+	   }
+       else 
+	   {
+	   cout<<"\n\n Invalid UserId or Password \n\n";
+	   counter1=0;
+	   }	
+       }    
+}
+
+
+
     
     
 	
