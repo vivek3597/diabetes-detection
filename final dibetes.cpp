@@ -1855,6 +1855,36 @@ void diabetes::admin()
 			cout<<"\n\n Terminated due to wrong key press\n";	
 	}
 }
+void adminstration::adminsi()
+{
+	int c=0;
+	system("cls");
+	fadmin.open("admin.txt",ios::app);
+    cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	cout<<"\n\n\t\t\t\t\t\t\t\t  WE ARE ALWAYS HERE TO HELP YOU \n\n\n";
+	cout<<" Enter Name : ";	
+	cin>>admino.name;
+	cout<<"\n\n Enter the userid : ";
+	cin>>admino.userid;
+	cout<<"\n\n Enter the password : ";
+	cin>>admino.password;
+	cout<<"\n\n Enter the phone no.: ";
+	cin>>admino.phna;
+	cout<<"\n\n Enter The ID GENERATED : ";
+	cin>>admino.stid;
+	sleep(1);
+	cout<<"\n\n Logging in in 3 seconds \n\n";
+	sleep(1);
+	cout<<"\n\n Logging in in 2 seconds \n\n";
+	sleep(1);
+	cout<<"\n\n Logging in in 1 seconds \n\n";
+	sleep(1);
+	fadmin.write((char*)&admino,sizeof(admino));
+	fadmin.close();
+	mainobj.admin();
+}
 	
 	
 	
