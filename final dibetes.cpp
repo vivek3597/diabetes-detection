@@ -1536,6 +1536,27 @@ void diabetes::prereport()
     fin.close();
     fturndoc.close();
 }
+
+void diabetes::aboutme()
+{
+		system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+		cout<<"\t\tNAME:AMIT SINGH SANSOYA\n";
+		cout<<"\t\tSECTION:1656\n";
+		cout<<"\t\tAND THIS IS AWESOME\n";
+		cout<<" \t\tSizeof class aminstration : "<<sizeof(adminstration);
+		cout<<"\n\n\t\tSizeof class diabetes : "<<sizeof(diabetes);
+		cout<<"\n\n\t\tSizeof class fianlreport : "<<sizeof(finalreport);
+		cout<<"\n\n\t\tSizeof class login : "<<sizeof(Login);
+		cout<<"\n\n\t\tSizeof class problems : "<<sizeof(problems);
+		cout<<"\n\n\t\tSizeof class doctors : "<<sizeof(doctor);
+		cout<<"\n\n\t\tSizeof class discuss : "<<sizeof(discuss);
+		cout<<"\n\n-------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+		exit(1);
+}
 	
 	
 	
