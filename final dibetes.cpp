@@ -2124,6 +2124,45 @@ void diabetes::queries()
 	exit(0); 
     }
 }
+void diabetes::showqu()
+{
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"_______________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n\n";
+    fin.open("query.txt",ios::in);
+    fout.open("reply.txt",ios::in);	
+	while(fin.read((char*)&q,sizeof(q)))
+	{
+		cout<<" Query Id : "<<q.id;
+		cout<<"\n\n QUERY ASKED BY : "<<q.name;
+		cout<<"\n\n Query : "<<q.input;
+		cout<<"\n\n";
+	}
+	cout<<"-----------------------------------------------------------------------------Replies---------------------------------------------------------------------------------------\n\n\n";
+	while(fout.read((char*)&q,sizeof(q)))
+	{
+		cout<<" Query Id : "<<q.id;
+		cout<<"\n\n Queries Solved : "<<q.reply;
+		cout<<"\n\n";
+	}
+	sleep(2);
+	fout.close();
+	fin.close();
+	cout<<"\n Press Y to Logout \n ";
+	char ch;
+	cout<<"\n\n Enter The Key : ";
+	cin>>ch;
+	if(ch=='y'||ch=='Y')
+	{
+	mainobj.twist();
+	
+}
+	else
+	exit(0);
+}
 
 
 
