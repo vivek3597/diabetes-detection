@@ -1476,6 +1476,89 @@ void diabetes::doctorlist()
     fin.close();
     remove("Temp.txt");
 }	
+
+void diabetes::prereport()
+{
+	int tempid,c=0;
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	fin.open("DIABETESDATA.txt",ios::in);
+	fturndoc.open("Doctors1.txt",ios::in);
+	cout<<" Enter The Id of paitent: ";
+	cin>>tempid;
+    while(fin.read((char*)&mainobj,sizeof(mainobj)))
+    {
+    	if(tempid==mainobj.id)
+    	{
+         break;	
+	    }
+    }
+      while(fturndoc.read((char*)&docp,sizeof(docp)))
+	     {	 
+         if(docp.id==tempid)
+         break;
+         }
+    if(tempid==mainobj.id && tempid==docp.id)
+    {
+    cout<<"\n\n NAME: "<<mainobj.name;
+	cout<<"\n\n Age: "<<mainobj.age;
+	cout<<"\n\n Sex: "<<mainobj.sex;
+	cout<<"\n\n Appointment date: "<<docp.st.d<<"/"<<docp.st.m<<"/"<<docp.st.y<<"\n";
+	cout<<"\n\n Mobile number: "<<mainobj.phn;
+	cout<<" \n\n Doctor Name: ";
+	if(docp.idofdoc==1)
+	{
+		cout<<"Dr.D.K.Thakur";
+	}
+	if(docp.idofdoc==2)
+	{
+		cout<<"Dr.N.S.Grover";
+	}
+	if(docp.idofdoc==3)
+	{
+		cout<<"Dr.D.S.Chawla";
+	}
+	if(docp.idofdoc==4)
+	{
+		cout<<"Dr.Jordan";
+	}
+	if(docp.idofdoc==5)
+	{
+		cout<<"Dr.JazzyB";
+	}
+    cout<<"\n\n\n";
+    }
+    else
+    cout<<"\n\n Invalid Id or Appointment has Not been Taken\n\n";
+    fin.close();
+    fturndoc.close();
+}
+
+void diabetes::aboutme()
+{
+		system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+		cout<<"\t\tNAME:AMIT SINGH SANSOYA\n";
+		cout<<"\t\tSECTION:1656\n";
+		cout<<"\t\tAND THIS IS AWESOME\n";
+		cout<<" \t\tSizeof class aminstration : "<<sizeof(adminstration);
+		cout<<"\n\n\t\tSizeof class diabetes : "<<sizeof(diabetes);
+		cout<<"\n\n\t\tSizeof class fianlreport : "<<sizeof(finalreport);
+		cout<<"\n\n\t\tSizeof class login : "<<sizeof(Login);
+		cout<<"\n\n\t\tSizeof class problems : "<<sizeof(problems);
+		cout<<"\n\n\t\tSizeof class doctors : "<<sizeof(doctor);
+		cout<<"\n\n\t\tSizeof class discuss : "<<sizeof(discuss);
+		cout<<"\n\n-------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+		exit(1);
+}
+	
+	
 	
 	
 	
