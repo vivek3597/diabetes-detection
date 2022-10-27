@@ -2004,6 +2004,40 @@ void diabetes::setlock()
 	   }	
        }    
 }
+void adminstration::duty()
+{
+	int choice;
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n\n";
+	cout<<" 1 > Give Replies\n\n";
+	cout<<" 2 > Take Complains\n\n";
+	cout<<" 3 > Add Medicines\n\n";
+	cout<<" 4 > Logout\n\n";
+	cout<<" Choose option : \n ";
+	cin>>choice;
+	switch(choice)
+	{
+	case 1:
+    mainobj.reply();	
+	break;	
+	case 2:
+	admino.complains();
+	break;
+	case 3:
+	admino.medi();
+	break;
+	case 4:
+	exit(0);
+	cout<<" \n\nLoging Out ....";
+	sleep(2);
+	mainobj.twist();	
+	} 
+}
+
 
 
 
