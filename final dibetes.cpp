@@ -1708,6 +1708,154 @@ void diabetes::patientlogin()
         
     }
 }
+
+void diabetes::admin()
+{
+	system("cls");
+    cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	cout<<"\n\n";
+	int ch;
+	char check;
+	BD:	
+	cout<<"\t\t\t\t\t\t\t\t  WE ARE ALWAYS HERE TO HELP YOU \n\n\t\t\t\t\t\t\t\t   CHOOSE THE OPTIONS FROM MENU\n\n 1: List All data(Paitents)\n\n 2: Search for Paitent\n\n 3: Delete Record(Paitents) \n\n 4: Update Records(Paitents)\n\n 5: Count Paitents\n\n 6: Admin Records\n\n 7: Admin Signup\n\n 8: Admin Duties\n\n 9: Logout";
+    cout<<"\n\n YOUR CHOICE FROM LIST : ";
+	cin>>ch;	
+	switch(ch)
+	{
+		    case 1:
+    		display(10,20);
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+			case 2:
+    		search();
+    		cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 3:
+		    deldata();
+		    cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 4:
+		    update();
+		    cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 5:
+	        admino.count();
+			cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+			case 6:
+		    mainobj.adminre();
+			cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+		    case 7:
+		    admino.adminsi();
+		    cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+			case 8:
+			admino.duty();
+			cout<<"\n Do You Want To Continue(y/n)\n";
+    		cout<<" YOUR CHOICE: ";
+    		cin>>check;
+    		if(check=='y'||check=='Y')
+    		{
+    		system("cls");
+    		goto BD;
+			}
+			else
+			{
+			cout<<"\n\n\t\t\tThank You! Visit us Again\n";	
+			break;
+		    }
+			case 9:
+			cout<<"\n\n Loging out......... \n\n";
+			sleep(2);
+			cout<<"\n\n Logged Out Successfully.....\n";
+			
+			mainobj.twist();	
+			default:
+			cout<<"\n\n Terminated due to wrong key press\n";	
+	}
+}
+	
 	
 	
 	
