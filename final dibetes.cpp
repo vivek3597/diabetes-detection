@@ -1617,6 +1617,97 @@ void diabetes::deldata()
     fin.close();
 }
 	
+void diabetes::patientlogin()
+{
+	int tempid,tempotp,co;
+	long long int tempno;
+		system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	cout<<"\n\n Enter Your user ID : ";
+	cin>>tempid;
+	cout<<"\n\n Enter Your phn No.: ";
+	cin>>tempno;
+	cout<<"\n\n OTP has been sent Wait for 5-10 secs\n\n ";
+	srand ( time(NULL) );
+	tempotp=rand()%80000+10300;
+	sleep(4);
+	cout<<" ";
+	cout<<"\n\n Your 5 digit OTP is : "<<tempotp<<" Valid for 10 seconds or the screen will go off with in next 5 seconds\n\n";
+	cout<<"\n\n Enter The 5-digit OTP: ";
+	cin>>co;
+	cout<<"\n\n ";
+	fin.open("DIABETESDATA.txt",ios::in);
+	if(tempotp==co)
+	 {
+	while(fin.read((char*)&mainobj,sizeof(mainobj)))
+     {
+    	if(tempid==mainobj.id && tempno==mainobj.phn)
+    	{
+	    break;
+        }
+     }
+    if(tempid==mainobj.id && tempno==mainobj.phn) 
+    {
+    system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n NAME: "<<mainobj.name;
+	cout<<"\n\n Age: "<<mainobj.age;
+	cout<<"\n\n Sex: "<<mainobj.sex;
+    cout<<"\n\n 1. Update Data \n\n 2. Change Doctor \n\n 3. Disease Level \n\n 4. Check Medicines \n\n 5. Buy\\Order Medicines \n\n 6. Register Complaints\n\n 7.See Messages//Complaint status\n\n 8.Exit";
+    cout<<"\n Enter Choice : ";
+    int lc;
+    cin>>lc;
+    switch(lc)
+    {
+    case 1:
+    pa.updatemine();
+    break;
+	case 2:	
+	pa.docchange();
+    break;
+    case 3:
+    pa.diseaselevel();
+    break;
+    case 4:
+    pa.medicare();
+    break;
+	case 5:
+	pa.buy();
+	break;
+	case 6:
+	pa.complaints();	
+	break;
+	case 7:
+	pa.seem();
+	break;
+	//case 8:
+	//bobj.totalbill();	
+	//break;
+	case 8:	
+	cout<<"Exiting...."	;
+	sleep(2);
+	mainobj.twist();
+	default	:
+		exit(0);
+	}
+    }
+	fin.close();
+    }
+    else
+    {
+    	cout<<"\n\n	Error While Logging...\n";
+    	sleep(3);
+        cout<<"\n\n Login Failed \n\n";
+     	fin.close();
+        
+    }
+}
 	
 	
 	
