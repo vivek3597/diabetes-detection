@@ -2037,6 +2037,49 @@ void adminstration::duty()
 	mainobj.twist();	
 	} 
 }
+void diabetes::reply()
+{
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"____________________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n\n";
+    fin.open("query.txt",ios::in);
+    fout.open("reply.txt",ios::app);
+    while(fin.read((char*)&q,sizeof(q)))
+    {
+    	cout<<"\n\n Query Id No --> "<<q.id;
+    	cout<<"\n\n Query --> "<<q.input;
+    	cout<<"\n\n Asked By --> "<<q.name;
+	}
+	int tempid,k=0;
+	fin.seekg(0,ios::beg);
+	cout<<" \n\n ";
+	cout<<" Enter The id Whom You want to give reply : ";
+	cin>>tempid;
+	cout<<"\n\n ";
+	while(fin.read((char*)&q,sizeof(q)))
+	{
+		if(tempid==q.id)
+		{
+			break;
+		}
+		else
+		k=1;
+	}
+	if(k==1)
+	cout<<"Invalid Id \n\n";
+	else if(tempid==q.id)
+	{
+	cout<<"Query Reply : ";	
+	fflush(stdin);
+	gets(q.reply);
+	fout.write((char*)&q,sizeof(q));
+	}
+	fout.close();
+	fin.close();
+}
 
 
 
