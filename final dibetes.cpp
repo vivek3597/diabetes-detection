@@ -2082,6 +2082,49 @@ void diabetes::reply()
 }
 
 
+void diabetes::queries()
+{
+	system("cls");
+	fout.open("query.txt",ios::app);
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"______________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    cout<<"\n\n\n";
+    cout<<"\n\n Enter The Name --> ";
+	cin>>q.name;	
+	cout<<"\n\n Enter the Query --> ";
+    fflush(stdin);
+	gets(q.input);
+    cout<<"\n ";
+	sleep(1);
+	cout<<"\n\n Your Query id no. Generated --> ";
+	srand(time(NULL));
+	q.id=rand()%1200+9999;
+	cout<<q.id;
+	fout.write((char*)&q,sizeof(q));
+	sleep(2);
+	cout<<"\n\n Your Query Registered\n ";
+	sleep(1);
+	cout<<"\n\n Press Y to logout ";
+	char ch;
+	cout<<"\n\n Enter The Key : ";
+	cin>>ch;
+	if(ch=='y'||ch=='Y')
+	{
+	fout.close();
+	sleep(2);	
+	mainobj.twist();
+    }
+	else
+	{
+	cout<<" Exit\n\n";
+	mainobj.welcome();	
+    fout.close();
+	exit(0); 
+    }
+}
+
 
 
     
