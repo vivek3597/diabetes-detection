@@ -2166,6 +2166,49 @@ void diabetes::showqu()
 
 
 
+void adminstration::medi()
+{
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"_______________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+	int n,i;
+	fin.open("Medicines.txt",ios::app);
+	cout<<" Enter The Number of Medicines to Enter : ";	
+	cin>>n;cout<<"\n\n ";
+	for(i=0;i<n;i++)
+	{
+	cout<<"\n\n Enter The Medicine Id : ";
+	cin>>medid;cout<<"\n\n";	
+	cout<<" Enter The Medicine Name : ";
+	fflush(stdin);
+	gets(medicines);
+	cout<<"\n\n Enter The Price : ";
+	cin>>medprice;
+	fin.write((char*)&admino,sizeof(admino));
+    }
+    fin.close();
+}
+
+void patient::medicare()
+{
+	system("cls");
+	cout<<"\t\t\t\t\t\t\t\t WELCOME TO THE DIABETES HEALTH CARE\t\t\n\t\t\t\t\t\t\t\t\tWe judge we understand!\n";
+	cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n";	
+	cout<<"\t\t\t\t\t\t\t\t   ....Tusharamit Enterprise....\n\n";
+    cout<<"_______________________________________________________________________________________________________________________________________________________________________________\n\n\n";
+    fout.open("Medicines.txt",ios::in);
+	cout<<" Here's the medicines list \n\n ";
+	cout<<setw(10)<<"Medicine ID"<<setw(10)<<"|"<<setw(15)<<"MEDICINE NAMES"<<setw(15)<<"|"<<setw(10)<<"PRICE"<<"|";
+	cout<<"\n\n________________________________________________________________________________________________________________________________________________________________________________\n\n";
+    while(fout.read((char*)&admino,sizeof(admino)))
+    {
+    cout<<"|"<<setw(9)<<admino.medid<<setw(10)<<"|"<<setw(15)<<admino.medicines<<setw(15)<<"|"<<setw(10)<<admino.medprice<<"|\n\n";	
+	}
+   fout.close();
+}
+
     
     
 	
